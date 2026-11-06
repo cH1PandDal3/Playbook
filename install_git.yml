@@ -1,0 +1,11 @@
+---
+- name: Установка Git на удаленные серверы
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Установить актуальную версию git
+      ansible.builtin.apt:
+        name: git
+        state: present
+        update_cache: yes
+
